@@ -36,7 +36,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, rando
 # Specify Numeric and Categorical Features
 
 numeric_features = ["proj_abr", "super_v", "proj_aht", "proj-sl", "net_staff"]
-#categorical_features = ["gender"]
+# categorical_features = ["gender"]
 
 #
 # Set Up Pipelines
@@ -47,6 +47,11 @@ numeric_features = ["proj_abr", "super_v", "proj_aht", "proj-sl", "net_staff"]
 
 numeric_transformer = Pipeline(steps = [("imputer", SimpleImputer()),
                                         ("scaler", StandardScaler())])
+
+# Catergorical Feature Transformer
+
+# categorical_transformer = Pipeline(steps = [("imputer", SimpleImputer(strategy = "constant", fill_value = "U")),
+#                                         ("ohe", OneHotEncoder(handle_unknown = "ignore"))])
 
 # Preprocessing Pipeline
 
@@ -79,6 +84,7 @@ accuracy_score(y_test, y_pred_class)
 
 import joblib
 joblib.dump(clf, "data/asa_superV_model.joblib")
+
 
 
 
