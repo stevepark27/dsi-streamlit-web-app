@@ -10,16 +10,11 @@ Created on Fri Feb 21 18:28:54 2025
 import streamlit as st
 import pandas as pd
 import joblib
-import os
 
 # load our model pipeline objects
 
-BASE_DIR = os.path.dirname(os.path.dirname(__file__)) # folder above app/
-abr_model = joblib.load(os.path.join(BASE_DIR, "model", "abr_superV_model.joblib"))
-asa_model = joblib.load(os.path.join(BASE_DIR, "model", "asa_superV_model.joblib"))
-
-# abr_model = joblib.load("abr_superV_model.joblib")
-# asa_model = joblib.load("asa_superV_model.joblib")
+abr_model = joblib.load("abr_superV_model.joblib")
+asa_model = joblib.load("asa_superV_model.joblib")
 
 # add title and instructions
 
@@ -88,3 +83,4 @@ if st.button("Submit For Prediction"):
     # output prediction
 
     st.subheader(f"Based on these values, the model predicts a {asa-1} to {asa+1} minute ASA and an ABR of approximately {abr}%")
+
