@@ -18,8 +18,8 @@ The app allows users to test different input scenarios, view predictions, and ex
 
 ## 📊 Model Information
 - Model type: Random Forest
-- Key features: net staffing, average call handle time, projected call volume
-- Output: average speed of answer (ASA)
+- Key features: net staffing, projected call handle time, projected call volume
+- Output: Average Speed of Answer (ASA), Abandonment Rate (ABR)
 - Preprocessing steps included in `asa_pipeline.py`
 
 ## 🛠 Technologies Used
