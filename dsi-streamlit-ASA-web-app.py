@@ -19,7 +19,7 @@ asa_model = joblib.load("asa_superV_model.joblib")
 # add title and instructions
 
 st.title("ASA/ABR Prediction Model")
-st.subheader("Enter the values for the following categories and submit for ASA prediction")
+st.subheader("Enter the values for the following categories and submit for ASA and ABR predictions")
 
 # Expected volume input form
 
@@ -83,5 +83,6 @@ if st.button("Submit For Prediction"):
     # output prediction
 
     st.subheader(f"Based on these values, the model predicts a {asa-1} to {asa+1} minute ASA and an ABR of approximately {abr}%")
+
 
 
